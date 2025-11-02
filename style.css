@@ -1,0 +1,163 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #07021e, #10062a, #07021e);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.particle-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.5; 
+}
+
+.particle {
+    position: absolute;
+    background: rgba(129, 140, 248, 0.4); 
+    border-radius: 50%;
+    animation: move-particles 20s infinite linear;
+    box-shadow: 0 0 3px #818cf8;
+    opacity: 0.6;
+}
+
+@keyframes move-particles {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(15vw, 15vh) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+#adventure-title span {
+    font-family: 'Exo 2', sans-serif;
+    letter-spacing: 0.08em; 
+}
+
+.card-wrapper {
+    animation: fadeInUp 0.7s ease-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(99, 102, 241, 0.3);
+    transition: all 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #07021e;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: opacity 0.5s ease-out; 
+}
+
+.loading-text {
+    color: #67e8f9;
+    font-family: 'Exo 2', sans-serif;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 8px rgba(52, 211, 235, 0.5);
+}
+
+#system-glyph {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem; 
+}
+
+#arcana-progress-wrapper {
+    background-color: #ffffff1a;
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 8px;
+    position: relative;
+}
+#arcana-progress {
+    height: 100%;
+    background-color: #f59e0b;
+    width: 0%;
+    transition: width 0.4s ease-out;
+}
+.unlocked-arcana {
+    color: #fde047; 
+    text-shadow: 0 0 5px rgba(253, 230, 138, 0.5);
+}
+
+.quest-log-entry {
+    background-color: #1e1b4b33;
+    border-left: 4px solid #4f46e5;
+    transition: transform 0.2s ease-out, background-color 0.2s;
+}
+.quest-log-entry:hover {
+    background-color: #1e1b4b55;
+    transform: translateX(2px);
+}
+
+.reward-box {
+    background-color: #064e3b;
+    border: 2px solid #2dd4bf; 
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.7); 
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reward-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(129, 140, 248, 0.6), 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(129, 140, 248, 0.9), 0 5px 10px rgba(0, 0, 0, 0.7);
+    }
+}
+
+#new-adventure-btn {
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+#new-adventure-btn:active {
+    transform: scale(0.98); 
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 0 10px #22d3ee;
+}
+
+.color-story { color: #818CF8; text-shadow: 0 0 5px rgba(129, 140, 248, 0.7); }
+.color-real { color: #4ADE80; text-shadow: 0 0 5px rgba(74, 222, 128, 0.7); }
+.color-mind { color: #A78BFA; text-shadow: 0 0 5px rgba(167, 139, 250, 0.7); }
+.color-home { color: #FDBA74; text-shadow: 0 0 5px rgba(253, 186, 116, 0.7); }
+.color-outside { color: #67E8F9; text-shadow: 0 0 5px rgba(103, 232, 249, 0.7); }
+.color-horror { color: #F87171; text-shadow: 0 0 5px rgba(248, 113, 113, 0.7); }
